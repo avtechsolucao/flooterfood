@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfood/screens/auth/login_page.dart';
+
+import './screens/restaurants/restaurants.page.dart';
+import './screens/auth/register_page.dart';
+import './screens/auth/login_page.dart';
 
 void main() {
   runApp(FlutterFoodApp());
@@ -17,7 +20,12 @@ class FlutterFoodApp extends StatelessWidget {
         accentColor: Colors.black,
         brightness: Brightness.dark,
       ),
-      home: LoginScreen(),
+      initialRoute: '/login',
+      routes: <String, WidgetBuilder>{
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
+        '/restaurants': (context) => RestaurantsPage(),
+      },
     );
   }
 }
